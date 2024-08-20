@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { DockDemo } from "@/components/dock-menu";
 import { ThemeProvider } from "@/components/theme-provider";
+import { FileTree } from "@/components/file-sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,12 +28,14 @@ export default function RootLayout({
           >
 
           <main className="dark:bg-black bg-white dark:bg-opacity-20 bg-opacity-20">
-            {children}
-            <div className="container pt-10 sticky">
-              <DockDemo />
-            </div>
-            
+            <div className="flex">
+              <FileTree />
+              {children}
+            </div>       
           </main>
+          <div className="">
+            <DockDemo />
+          </div>
         </ThemeProvider>
       </body>
     </html>
