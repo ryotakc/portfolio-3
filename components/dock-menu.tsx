@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
   Tooltip,
@@ -13,6 +13,10 @@ import {
 } from "@/components/ui/tooltip";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { ThemeChanger } from "@/components/theme-changer";
+// import { Popover, PopoverContent } from "@radix-ui/react-popover";
+import Image from "next/image";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import PopoverMenu from "./popover-menu";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -95,6 +99,10 @@ export function DockDemo() {
   return (
     <TooltipProvider>
     <Dock direction="middle">
+        <DockIcon>
+          <PopoverMenu />
+        </DockIcon>
+        <Separator orientation="vertical" className="h-full" />
         {DATA.navbar.map((item) => (
         <DockIcon key={item.label}>
             <Tooltip>
@@ -116,7 +124,7 @@ export function DockDemo() {
         </DockIcon>
         ))}
         <Separator orientation="vertical" className="h-full" />
-        {Object.entries(DATA.contact.social).map(([name, social]) => (
+        {/* {Object.entries(DATA.contact.social).map(([name, social]) => (
         <DockIcon key={name}>
             <Tooltip>
             <TooltipTrigger asChild>
@@ -136,7 +144,7 @@ export function DockDemo() {
             </Tooltip>
         </DockIcon>
         ))}
-        <Separator orientation="vertical" className="h-full py-2" />
+        <Separator orientation="vertical" className="h-full py-2" /> */}
         <DockIcon>
         <Tooltip>
             <TooltipTrigger asChild>
