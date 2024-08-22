@@ -15,11 +15,11 @@ export default function PopoverMenu() {
             </PopoverTrigger>
             <PopoverContent className="w-auto" >
                 <div className="container pt-5 pb-5">
-                    <div className="flex items-center pb-5">
+                    <div className="md:flex items-center pb-5">
                         <div className="">
-                            <Image src="/profile.webp" height={32} width={32} alt="Profile" className="size-24 rounded-md"/>
+                            <Image src="/profile.webp" height={32} width={32} alt="Profile" className="size-24 rounded-xl"/>
                         </div>
-                        <div className="ml-8">
+                        <div className="md:ml-8">
                             <div>
                                 <h1>Ryota Kato</h1>
                             </div>
@@ -47,26 +47,37 @@ export default function PopoverMenu() {
                     </div>
                     <Separator className="w-full" />
                     <div className="pt-5">
-                        <div className="flex gap-3">
-                            <div>
-                                <Button variant="ghost" className="flex gap-1">
-                                    <Home />
-                                    <p>Home</p>
-                                </Button>
-                                <Button variant="ghost" className="flex gap-1">
-                                    <CodeXml />
-                                    <p>Work</p>
-                                </Button>
+                        <div className="md:flex gap-5">
+                            <div className="">
+                                <Link href="/">
+                                    <Button variant="ghost" className="flex gap-1 pb-2">
+                                        <Home />
+                                        <p>Home</p>
+                                    </Button>                            
+                                </Link>
+
+                                <Link href="/work">
+                                    <Button variant="ghost" className="flex gap-1">
+                                        <CodeXml />
+                                        <p>Work</p>
+                                    </Button>                            
+                                </Link>
+
                             </div>
                             <div>
-                                <Button variant="ghost" className="flex gap-1">
-                                    <Images />
-                                    <p>Photography</p>
-                                </Button>
-                                <Button variant="ghost" className="flex gap-1">
-                                    <NotebookTabs  />
-                                    <p>Contact</p>
-                                </Button>
+                                <Link href="/photography">
+                                    <Button variant="ghost" className="flex gap-1 pb-2">
+                                        <Images />
+                                        <p>Photography</p>
+                                    </Button>                            
+                                </Link>
+
+                                <Link href="/contact">
+                                    <Button variant="ghost" className="flex gap-1">
+                                        <NotebookTabs  />
+                                        <p>Contact</p>
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                     </div>
