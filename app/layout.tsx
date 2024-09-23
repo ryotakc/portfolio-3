@@ -29,7 +29,10 @@ export default function RootLayout({
 
           <main className="dark:bg-black bg-white dark:bg-opacity-20 bg-opacity-20">
             <div className="flex">
-              <FileTree />
+              <div className="sm:hidden">
+                <FileTree />
+              </div>
+              
               {children}
             </div>       
           </main>
